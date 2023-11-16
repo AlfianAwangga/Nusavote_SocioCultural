@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="et" parent="Widget.AppCompat.EditText">
+        <item name="android:height">50dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:fontFamily">@font/inter_medium</item>
+    </style>
+
+    //background
+    <style name="et.OutlinedGrey">
+        <item name="android:background">@drawable/outlined_grey</item>
+    </style>
+    <style name="et.OutlinedBlack">
+        <item name="android:background">@drawable/outlined_black</item>
+    </style>
+    <style name="et.FilledGrey">
+        <item name="android:background">@drawable/filled_grey</item>
+    </style>
+
+    //inputType
+    <style name="et.OutlinedGrey.textPassword">
+        <item name="android:inputType">textPassword</item>
+    </style>
+    <style name="et.OutlinedGrey.numberPassword">
+        <item name="android:inputType">numberPassword</item>
+    </style>
+    <style name="et.OutlinedGrey.datetime">
+        <item name="android:inputType">datetime</item>
+    </style>
+    <style name="et.OutlinedGrey.email">
+        <item name="android:inputType">textEmailAddress</item>
+    </style>
+    <style name="et.OutlinedGrey.phone">
+        <item name="android:inputType">phone</item>
+    </style>
+    <style name="et.OutlinedGrey.number">
+        <item name="android:inputType">phone</item>
+    </style>
+
+    <style name="et.OutlinedBlack.textPassword">
+        <item name="android:inputType">textPassword</item>
+    </style>
+    <style name="et.OutlinedBlack.numberPassword">
+        <item name="android:inputType">numberPassword</item>
+    </style>
+    <style name="et.OutlinedBlack.datetime">
+        <item name="android:inputType">datetime</item>
+    </style>
+    <style name="et.OutlinedBlack.email">
+        <item name="android:inputType">textEmailAddress</item>
+    </style>
+    <style name="et.OutlinedBlack.phone">
+        <item name="android:inputType">phone</item>
+    </style>
+    <style name="et.OutlinedBlack.number">
+        <item name="android:inputType">phone</item>
+    </style>
+
+    <style name="et.FilledGrey.textPassword">
+        <item name="android:inputType">textPassword</item>
+    </style>
+    <style name="et.FilledGrey.numberPassword">
+        <item name="android:inputType">numberPassword</item>
+    </style>
+    <style name="et.FilledGrey.datetime">
+        <item name="android:inputType">datetime</item>
+    </style>
+    <style name="et.FilledGrey.email">
+        <item name="android:inputType">textEmailAddress</item>
+    </style>
+    <style name="et.FilledGrey.phone">
+        <item name="android:inputType">phone</item>
+    </style>
+    <style name="et.FilledGrey.number">
+        <item name="android:inputType">phone</item>
+    </style>
+</resources>

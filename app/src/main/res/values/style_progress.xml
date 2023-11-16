@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <style name="pb" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:layout_height">14dp</item>
+        <item name="android:layout_width">292dp</item>
+    </style>
+
+    //layer color
+    <style name="pb.Red">
+        <item name="android:progressDrawable">@drawable/layer_red_grey</item>
+    </style>
+    
+</resources>

@@ -3,6 +3,9 @@
     <style name="Base.Theme.Massive" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/primaryLight</item>
     </style>
 
     <style name="Theme.Massive" parent="Base.Theme.Massive" />

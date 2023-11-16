@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="radio" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    //selector
+    <style name="radio.selectorRed">
+        <item name="android:background">@drawable/selector_checked_red_white</item>
+        <item name="android:textColor">@drawable/selector_checked_black_white</item>
+        <item name="android:button">@drawable/radio_null</item>
+    </style>
+</resources>
