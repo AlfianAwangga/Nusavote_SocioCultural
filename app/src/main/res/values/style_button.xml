@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="btn" parent="Widget.Material3.Button">
+    <style name="btn" parent="Widget.Material3.Button.ElevatedButton">
         <item name="android:height">50dp</item>
         <item name="android:textSize">16sp</item>
         <item name="cornerRadius">16sp</item>
