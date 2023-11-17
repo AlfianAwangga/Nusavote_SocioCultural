@@ -42,11 +42,129 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/iv_bahasa"
+        android:id="@+id/iv_selamat_ratong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/btn_mulai"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/iv_welcome"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"/>
+
+    <ImageView
+        android:id="@+id/iv_rahajeng_rauh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_welcome"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="80dp"/>
+
+    <ImageView
+        android:id="@+id/iv_sugeng_rawuh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/iv_welcome"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="13dp"/>
+
+    <ImageView
+        android:id="@+id/iv_tabea_waya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/iv_welcome"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="86dp"/>
+
+    <ImageView
+        android:id="@+id/iv_wilujeng_sumping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/iv_welcome"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"/>
+
+    <ImageView
+        android:id="@+id/iv_saleum_teuka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_welcome"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="57dp"/>
+
+    <ImageView
+        android:id="@+id/iv_salamaik_datang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/iv_welcome"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="58dp"/>
+
+    <ImageView
+        android:id="@+id/iv_salamat_datang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_welcome"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="43dp"/>
+
+    <ImageView
+        android:id="@+id/iv_horas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/iv_welcome"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="118dp"/>
+
+    <ImageView
+        android:id="@+id/iv_onomi_fakhai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_welcome"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="122dp"/>
+
+    <ImageView
+        android:id="@+id/iv_kopisanangan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/iv_welcome"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="90dp"/>
+
+    <ImageView
+        android:id="@+id/iv_salama_engka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_welcome"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="110dp"/>
+
+    <ImageView
+        android:id="@+id/iv_koe_pontam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/iv_welcome"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="2dp"/>
+
+    <ImageView
+        android:id="@+id/iv_salamakki"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_welcome"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
