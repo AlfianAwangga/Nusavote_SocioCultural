@@ -1,39 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="tv" parent="TextAppearance.AppCompat">
-        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
-    //style
-    <style name="tv.Bold">
-        <item name="android:textStyle">bold</item>
+    //font
+    <style name="tv.interBlack">
+        <item name="android:fontFamily">@font/inter_black</item>
     </style>
-    <style name="tv.Italic">
-        <item name="android:textStyle">italic</item>
+    <style name="tv.interBold">
+        <item name="android:fontFamily">@font/inter_bold</item>
+    </style>
+    <style name="tv.interSemiBold">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+    </style>
+    <style name="tv.interExtraBold">
+        <item name="android:fontFamily">@font/inter_extrabold</item>
+    </style>
+    <style name="tv.interMedium">
+        <item name="android:fontFamily">@font/inter_medium</item>
+    </style>
+    <style name="tv.interRegular">
+        <item name="android:fontFamily">@font/inter_regular</item>
+    </style>
+    <style name="tv.interLight">
+        <item name="android:fontFamily">@font/inter_light</item>
+    </style>
+    <style name="tv.interExtraLight">
+        <item name="android:fontFamily">@font/inter_extralight</item>
+    </style>
+    <style name="tv.interThin">
+        <item name="android:fontFamily">@font/inter_thin</item>
     </style>
 
-    //size
-    <style name="tv.Bold.16">
+
+    //size interblack
+    <style name="tv.interBlack.16">
         <item name="android:textSize">16sp</item>
     </style>
-    <style name="tv.Bold.20">
+    <style name="tv.interBlack.20">
         <item name="android:textSize">20sp</item>
     </style>
 
+    <style name="tv.interBlack.24">
+        <item name="fontFamily">@font/inter_black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    // size semiBold
+    <style name="tv.interSemiBold.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="tv.interSemiBold.20">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="tv.interSemiBold.24">
+        <item name="fontFamily">@font/inter_black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    // size intermedium
+    <style name="tv.interMedium.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="tv.interMedium.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="tv.interMedium.20">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="tv.interMedium.24">
+        <item name="fontFamily">@font/inter_black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    // size interRegular
+    <style name="tv.interRegular.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="tv.interRegular.20">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="tv.interRegular.24">
+        <item name="fontFamily">@font/inter_black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+
+    // size interLight
+    <style name="tv.interLight.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="tv.interLight.20">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="tv.interLight.24">
+        <item name="fontFamily">@font/inter_black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+
+    // size interExtraLight
+    <style name="tv.interExtraLight.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="tv.interExtraLight.20">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="tv.interExtraLight.24">
+        <item name="fontFamily">@font/inter_black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+
+    // size interthin
+    <style name="tv.interThin.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="tv.interThin.20">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="tv.interThin.24">
+        <item name="fontFamily">@font/inter_black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    // style interBold
+    <style name="tv.interBold.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="tv.interBold.20">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="tv.interBold.24">
+        <item name="fontFamily">@font/inter_black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
     //background
-    <style name="tv.Bold.16.OutlineGrey">
+    <style name="tv.interBlack.16.OutlineGrey">
         <item name="android:background">@drawable/outlined_grey</item>
         <item name="android:padding">10dp</item>
     </style>
-    <style name="tv.Bold.16.OutlineBlack">
+    <style name="tv.interBlack.16.OutlineBlack">
         <item name="android:background">@drawable/outlined_black</item>
         <item name="android:padding">10dp</item>
     </style>
-    <style name="tv.Bold.20.OutlineGrey">
+    <style name="tv.interBlack.20.OutlineGrey">
         <item name="android:background">@drawable/outlined_grey</item>
         <item name="android:padding">10dp</item>
     </style>
-    <style name="tv.Bold.20.OutlineBlack">
+    <style name="tv.interBlack.20.OutlineBlack">
         <item name="android:background">@drawable/outlined_black</item>
         <item name="android:padding">10dp</item>
     </style>

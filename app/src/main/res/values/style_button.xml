@@ -23,10 +23,10 @@
 
     //Google Button
     <style name="btn.White.Google">
-        <item name="android:drawableLeft"></item>
+        <item name="android:drawableLeft">@drawable/img_google</item>
     </style>
     //Facebook Button
     <style name="btn.White.Facebook">
-        <item name="android:drawableLeft"></item>
+        <item name="android:drawableLeft">@drawable/img_facebook</item>
     </style>
 </resources>
