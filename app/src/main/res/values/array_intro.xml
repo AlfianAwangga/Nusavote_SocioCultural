@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="question">
+        <item>Apa Bahasa Jawanya Makan?</item>
+        <item>Apa Bahasa Jawanya Tidur?</item>
+        <item>Apa Bahasa Jawanya Minum?</item>
+    </array>
+
+    <array name="correct_answer">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </array>
+</resources>

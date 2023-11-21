@@ -7,6 +7,7 @@ import android.view.View
 import androidx.core.widget.doOnTextChanged
 import com.example.massive.R
 import com.example.massive.databinding.ActivityRegisterBinding
+import com.example.massive.view.activities.intro.intro
 
 private lateinit var binding: ActivityRegisterBinding
 
@@ -33,7 +34,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                     binding.tilConfirmPassword.error = "Konfirmasi Password Salah, Coba Lagi!"
                 } else {
                     binding.tilConfirmPassword.error = null
-                    val intent = Intent(this@RegisterActivity, HomeActivity::class.java)
+                    val intent = Intent(this@RegisterActivity, intro::class.java)
                     startActivity(intent)
                 }
             }

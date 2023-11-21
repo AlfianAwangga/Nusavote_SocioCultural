@@ -110,38 +110,71 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_masuk" />
 
+<!--    <Button-->
+<!--        android:id="@+id/btn_google"-->
+<!--        style="@style/btn.White.Google"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_marginTop="276dp"-->
+<!--        android:text="Google"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btn_masuk" />-->
+
+<!--    <Button-->
+<!--        style="@style/btn.White.Facebook"-->
+<!--        android:id="@+id/btn_facebook"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_marginTop="276dp"-->
+<!--        android:text="Facebook"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btn_masuk" />-->
+
+<!--    <TextView-->
+<!--        style="@style/tv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="Dengan masuk, Anda menyetujui Persyaratan dan \n-->
+<!--                        Kebijakan Privasi Kami."-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btn_google" />-->
+
     <Button
         android:id="@+id/btn_google"
         style="@style/btn.White.Google"
-        android:layout_width="160dp"
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginBottom="8dp"
         android:text="Google"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/btn_masuk" />
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_policy" />
 
     <Button
         style="@style/btn.White.Facebook"
         android:id="@+id/btn_facebook"
-        android:layout_width="165dp"
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:layout_marginTop="276dp"
         android:text="Facebook"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/btn_masuk" />
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_policy" />
 
     <TextView
+        android:id="@+id/tv_policy"
         style="@style/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
         android:text="Dengan masuk, Anda menyetujui Persyaratan dan \n
                         Kebijakan Privasi Kami."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_google" />
-
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
