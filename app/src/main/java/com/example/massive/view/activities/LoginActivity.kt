@@ -23,23 +23,24 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.btnMasuk.setOnClickListener(this)
         binding.ivBackLogin.setOnClickListener(this)
+        binding.tvLupaPassword.setOnClickListener(this)
     }
 
     private var loginTextWatcher = object :TextWatcher{
-        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+        }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             var username = binding.etUsernameLogin.text.toString().trim()
             var password = binding.etPasswordLogin.text.toString().trim()
 
-            if (username.isNotEmpty() && password.isNotEmpty()){
-                binding.btnMasuk.isEnabled = true
-            }else{
-                binding.btnMasuk.isEnabled = false
-            }
+            binding.btnMasuk.isEnabled = username.isNotEmpty() && password.isNotEmpty()
         }
 
-        override fun afterTextChanged(s: Editable?) {}
+        override fun afterTextChanged(s: Editable?) {
+
+        }
 
     }
 
@@ -51,6 +52,10 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.iv_back_login->{
                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.tv_lupa_password->{
+                val intent = Intent(this@LoginActivity, LupaActivity::class.java)
                 startActivity(intent)
             }
         }

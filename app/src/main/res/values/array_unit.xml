@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="namaUnit">
+        <item>Unit 1</item>
+        <item>Unit 2</item>
+        <item>Unit 3</item>
+        <item>Unit 4</item>
+    </string-array>
+    <string-array name="deskripsiUnit">
+        <item>Memahami frasa dasar, menggunakan kalimat dasar</item>
+        <item>Memahami frasa dasar, menggunakan kalimat dasar</item>
+        <item>Memahami frasa dasar, menggunakan kalimat dasar</item>
+        <item>Memahami frasa dasar, menggunakan kalimat dasar</item>
+    </string-array>
+    <string-array name="panduanUnit">
+        <item>panduan 1</item>
+        <item>panduan 2</item>
+        <item>panduan 3</item>
+        <item>panduan 4</item>
+    </string-array>
+</resources>

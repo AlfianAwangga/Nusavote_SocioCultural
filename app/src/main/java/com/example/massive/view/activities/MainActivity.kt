@@ -9,7 +9,6 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.massive.R
 import com.example.massive.databinding.ActivityMainBinding
 
-
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
