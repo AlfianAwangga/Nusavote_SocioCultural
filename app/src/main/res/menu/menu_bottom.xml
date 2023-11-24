@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/homeFragment"
         android:title="Beranda"
-        android:icon="@drawable/icon_home"/>
+        android:icon="@drawable/selector_home"
+        app:cnb_backgroundColor="@color/primary_15"
+        app:cnb_textColor="@color/primary"
+        app:cnb_iconColor="@color/primary"/>
 
     <item android:id="@+id/guideFragment"
-        android:title="Panduan"
-        android:icon="@drawable/icon_book"/>
+        android:title="Materi"
+        android:icon="@drawable/selector_book"
+        app:cnb_backgroundColor="@color/primary_15"
+        app:cnb_textColor="@color/primary"
+        app:cnb_iconColor="@color/primary"/>
 
     <item android:id="@+id/profileFragment"
-        android:title="Profil"
-        android:icon="@drawable/icon_user"/>
+        android:title="Saya"
+        android:icon="@drawable/selector_user"
+        app:cnb_backgroundColor="@color/primary_15"
+        app:cnb_textColor="@color/primary"
+        app:cnb_iconColor="@color/primary"/>
 </menu>

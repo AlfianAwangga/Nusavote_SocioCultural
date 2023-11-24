@@ -11,7 +11,7 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="60dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,15 +19,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_bottom" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottomNavigationView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:menu="@menu/menu_bottom"-->
+<!--        android:background="@drawable/line_top"-->
+<!--        app:itemActiveIndicatorStyle="@style/App.Indicator"-->
+<!--        app:itemIconTint="@drawable/selector_checked_black_white"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:menu="@menu/menu_bottom"
+        android:layout_height="60dp"
+        app:cnb_menuResource="@menu/menu_bottom"
+        app:cnb_radius="24dp"
+        app:cnb_iconSize="30dp"
+        app:cnb_textAppearance="@style/tv.interMedium.16"
+        app:cnb_animationDuration="@integer/material_motion_duration_long_2"
         android:background="@drawable/line_top"
-        app:itemActiveIndicatorStyle="@style/App.Indicator"
-        app:itemIconTint="@drawable/selector_checked_black_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.massive.view.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,7 +14,7 @@ import com.example.massive.model.StageModel
 import com.example.massive.model.UnitModel
 import com.example.massive.view.adapters.UnitAdapter
 
-class Bagian2Fragment : Fragment(), View.OnClickListener {
+class Bagian2Fragment(private val context: Context?) : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentBagian2Binding
 
     override fun onCreateView(

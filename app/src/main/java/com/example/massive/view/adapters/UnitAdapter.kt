@@ -27,7 +27,7 @@ class UnitAdapter(private val context: Context?, private val list: List<UnitMode
                 binding.tvUnitNama.text = this.nama
                 binding.tvUnitDeskripsi.text = this.deskripsi
                 binding.rvStage.layoutManager = LinearLayoutManager(context)
-                binding.rvStage.adapter = StageAdapter(this.stage)
+                binding.rvStage.adapter = StageAdapter(context, this.stage)
             }
         }
     }

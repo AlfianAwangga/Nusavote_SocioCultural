@@ -159,6 +159,10 @@
         <item name="android:background">@drawable/outlined_grey</item>
         <item name="android:padding">10dp</item>
     </style>
+    <style name="tv.interSemiBold.20.OutlineGrey">
+        <item name="android:background">@drawable/outlined_grey</item>
+        <item name="android:padding">16dp</item>
+    </style>
     <style name="tv.interBlack.16.OutlineBlack">
         <item name="android:background">@drawable/outlined_black</item>
         <item name="android:padding">10dp</item>

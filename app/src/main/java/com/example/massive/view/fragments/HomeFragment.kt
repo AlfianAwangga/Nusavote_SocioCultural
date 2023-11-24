@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
+import com.example.massive.R
 import com.example.massive.databinding.FragmentHomeBinding
+import com.example.massive.view.activities.HomeActivity
 import com.example.massive.view.adapters.HomePagerAdapter
 
 class HomeFragment : Fragment() {
@@ -15,9 +18,9 @@ class HomeFragment : Fragment() {
         binding =  FragmentHomeBinding.inflate(inflater, container, false)
 
         val fragmentList = arrayListOf<Fragment>(
-            Bagian1Fragment(),
-            Bagian2Fragment(),
-            Bagian3Fragment()
+            Bagian1Fragment(requireContext()),
+            Bagian2Fragment(requireContext()),
+            Bagian3Fragment(requireContext())
         )
 
         val adapter = HomePagerAdapter(

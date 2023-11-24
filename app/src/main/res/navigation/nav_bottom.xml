@@ -10,13 +10,13 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/guideFragment"
-        android:name="com.example.massive.view.fragments.GuideFragment"
-        android:label="fragment_second"
-        tools:layout="@layout/fragment_guide" />
-    <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.massive.view.fragments.ProfileFragment"
         android:label="fragment_third"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.example.massive.view.fragments.GuideFragment"
+        android:label="fragment_guide"
+        tools:layout="@layout/fragment_guide" />
 </navigation>
