@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.massive.databinding.ListUnitBinding
 import com.example.massive.model.UnitModel
 
-class UnitAdapter(private val context: Context?, private val list: List<UnitModel>) : RecyclerView.Adapter<UnitAdapter.ViewHolder>(){
+class UnitAdapter(private val context: Context?, private val list: MutableList<UnitModel>) : RecyclerView.Adapter<UnitAdapter.ViewHolder>(){
 
     class ViewHolder(val binding: ListUnitBinding) : RecyclerView.ViewHolder(binding.root)
 

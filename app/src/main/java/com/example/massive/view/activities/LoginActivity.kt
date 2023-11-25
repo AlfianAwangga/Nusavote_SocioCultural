@@ -8,8 +8,10 @@ import android.text.TextWatcher
 import android.view.View
 import com.example.massive.R
 import com.example.massive.databinding.ActivityLoginBinding
+import com.example.massive.util.customSharePreference
 
 private lateinit var binding: ActivityLoginBinding
+private lateinit var pref : customSharePreference
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -20,6 +22,10 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.etUsernameLogin.addTextChangedListener(loginTextWatcher)
         binding.etPasswordLogin.addTextChangedListener(loginTextWatcher)
+
+        // inisialisasi custom share preference
+        pref = customSharePreference(this@LoginActivity)
+
 
         binding.btnMasuk.setOnClickListener(this)
         binding.ivBackLogin.setOnClickListener(this)
@@ -47,8 +53,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(b: View) {
         when (b.id){
             R.id.btn_masuk->{
-                val intent = Intent(this@LoginActivity, HomeActivity::class.java)
-                startActivity(intent)
+                pref.saveLogin(1).let {
+                    val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
             }
             R.id.iv_back_login->{
                 val intent = Intent(this@LoginActivity, MainActivity::class.java)

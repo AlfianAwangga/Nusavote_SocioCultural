@@ -16,6 +16,18 @@
             android:name=".view.activities.QuizActivity"
             android:exported="false" />
         <activity
+            android:name=".view.activities.bagian4GuideActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activities.bagian3GuideActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activities.bagian2GuideActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activities.bagian1GuideActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activities.LupaActivity"
             android:exported="false" />
         <activity

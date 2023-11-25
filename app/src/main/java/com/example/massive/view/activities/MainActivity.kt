@@ -8,9 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.massive.R
 import com.example.massive.databinding.ActivityMainBinding
+import com.example.massive.util.customSharePreference
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding : ActivityMainBinding
+    private lateinit var pref : customSharePreference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         splashScreen()
@@ -19,14 +21,29 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         welcomeAnimation()
 
+        init()
+        checkCondition()
+
         binding.btnMulai.setOnClickListener(this)
         binding.btnPunyaAkun.setOnClickListener(this)
 
     }
 
+    private fun checkCondition() {
+        if(!pref.getLogin().equals(0)){
+            val intent = Intent(this@MainActivity,HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
     private fun splashScreen() {
         Thread.sleep(1000)
         installSplashScreen()
+    }
+
+    private fun init(){
+        pref = customSharePreference(this@MainActivity)
     }
 
     private fun welcomeAnimation() {

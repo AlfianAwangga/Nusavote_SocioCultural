@@ -71,6 +71,11 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="tv.interMedium.14.white">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="tv.interMedium.20">
         <item name="android:textSize">20sp</item>
     </style>
@@ -146,6 +151,10 @@
     </style>
     <style name="tv.interBold.20">
         <item name="android:textSize">20sp</item>
+    </style>
+    <style name="tv.interBold.20.white">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="tv.interBold.24">
