@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="swch" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:thumbTint">@color/white</item>
+
+    </style>
+
+</resources>

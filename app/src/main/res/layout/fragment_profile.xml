@@ -1,29 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragments.ProfileFragment">
+    android:fillViewport="true"
+    tools:context=".view.fragments.ProfileFragment"
+    >
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HALAMAN KETIGA"
-        app:layout_constraintBottom_toBottomOf="parent"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_profile"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/icon_done"
+        android:background="@drawable/shape_rounded_img"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_logout_sementara"
+    <TextView
+        android:id="@+id/tv_nama_user"
+        style="@style/tv.interBold.24.black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="logout sementara"
+        android:layout_marginTop="24dp"
+        android:text="Kristo Samosir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/img_profile" />
+
+    <TextView
+        android:id="@+id/tv_email_user"
+        style="@style/tv.interMedium.16.grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="galihyoga@gmail.com"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nama_user" />
+
+    <TextView
+        android:id="@+id/tv_tgl_bergabung"
+        style="@style/tv.interMedium.16.grey2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/icon_last_time"
+        android:drawablePadding="16dp"
+        android:text="Bergabung pada November 2023"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_user" />
+
+    <Button
+        android:id="@+id/btn_edit_profile"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Edit Profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tgl_bergabung" />
+
+    <TextView
+        android:id="@+id/textView7"
+        style="@style/tv.interMedium.20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Statistik"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_edit_profile" />
+
+    <LinearLayout
+        android:id="@+id/linerLayout1"
+        style="@style/tv.interSemiBold.20.OutlineGrey"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp">
+        <TextView
+            android:id="@+id/tv_total_xp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27"
+            android:layout_marginStart="16dp"
+            style="@style/tv.interSemiBold.20"
+            android:drawableLeft="@drawable/icon_lighting"
+            android:drawablePadding="24dp"
+            />
+
+        <TextView
+            style="@style/tv.interMedium.14.grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="71dp"
+            android:text="Total XP" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/tv.interSemiBold.20.OutlineGrey"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linerLayout1"
+        tools:layout_editor_absoluteX="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_total_belajar"
+            style="@style/tv.interSemiBold.20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawableLeft="@drawable/icon_time"
+            android:drawablePadding="24dp"
+            android:text="2j, 45m" />
+
+        <TextView
+            style="@style/tv.interMedium.14.grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="91dp"
+            android:text="Waktu Belajar" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView8"
+        style="@style/tv.interSemiBold.20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Dipelajari Terakhir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/layer_shadow_red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/icon_jawa"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView9"
+            style="@style/tv.interBold.20.white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="Bahasa Jawa"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/pbProfile"
+            android:layout_width="180dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="5dp"
+            android:layout_marginStart="18dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <TextView
+            style="@style/tv.interMedium.14.white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stage 3"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="18dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+        <TextView
+            style="@style/tv.interMedium.14.white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="16dp"
+            android:text="60%"
+            app:layout_constraintStart_toEndOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,5 +1,6 @@
 package com.example.massive.view.fragments
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import com.example.massive.R
 import com.example.massive.databinding.FragmentProfileBinding
 import com.example.massive.util.customSharePreference
+import com.example.massive.view.activities.EditProfileActivity
 import com.example.massive.view.activities.HomeActivity
 import com.example.massive.view.activities.MainActivity
 
@@ -26,17 +28,21 @@ class ProfileFragment : Fragment() {
 
         init()
 
-        logout()
+        editProfil()
 
         return binding.root
     }
 
-    private fun logout() {
-        binding.btnLogoutSementara.setOnClickListener{
-            pref.saveLogin(0).let {
-                val intent = Intent(activity, MainActivity::class.java)
-                startActivity(intent)
-            }
+
+    private fun editProfil() {
+        binding.btnEditProfile.setOnClickListener{
+            val bundle = Bundle()
+            bundle.putString("nama", this.binding.tvNamaUser.text.toString())
+            bundle.putString("email", this.binding.tvEmailUser.text.toString())
+
+            val intent = Intent(activity, EditProfileActivity::class.java)
+            intent.putExtras(bundle)
+            startActivity(intent)
         }
     }
 
