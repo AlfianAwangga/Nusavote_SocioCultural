@@ -21,13 +21,14 @@
             android:name=".view.activities.QuizActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activities.bagian1GuideActivity"
+            android:name=".view.activities.DetailGuideActivity"
             android:exported="false" />
         <activity
             android:name=".view.activities.LupaActivity"
             android:exported="false" />
         <activity
             android:name=".view.activities.HomeActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".view.activities.RegisterActivity"

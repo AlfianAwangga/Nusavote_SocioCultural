@@ -1,62 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/layer_shadow_red"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/layer_shadow_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/iv_guide"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="30dp"
-            android:src="@drawable/icon_guide"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <TextView
+            android:id="@+id/judulGuide"
+            style="@style/tv.interBold.20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="JUDUL MATERI"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/judulGuide"
-            style="@style/tv.interBold.20.white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="INI ADALAH JUDUL"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintStart_toEndOf="@+id/iv_guide"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:id="@+id/deskripsiGuide"
-            style="@style/tv.interMedium.14.white"
-            android:layout_width="wrap_content"
+            style="@style/tv.interMedium.14"
+            android:layout_width="245dp"
             android:layout_height="wrap_content"
             android:text="ini adalah deskripsi"
-            android:layout_marginStart="16dp"
-            app:layout_constraintStart_toEndOf="@+id/iv_guide"
+            app:layout_constraintStart_toStartOf="@+id/judulGuide"
             app:layout_constraintTop_toBottomOf="@+id/judulGuide" />
 
-        <Button
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_guide_pelajari"
             style="@style/btn.White"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:text="Pelajari"
-            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:contentDescription="Pelajari"
+            android:src="@drawable/icon_play"
+            app:elevation="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

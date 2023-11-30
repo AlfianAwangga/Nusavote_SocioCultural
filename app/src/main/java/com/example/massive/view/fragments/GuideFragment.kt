@@ -1,6 +1,5 @@
 package com.example.massive.view.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.massive.R
 import com.example.massive.databinding.FragmentGuideBinding
 import com.example.massive.model.GuideModel
-import com.example.massive.view.activities.bagian1GuideActivity
 import com.example.massive.view.adapters.GuideAdapter
 
 class GuideFragment : Fragment() {

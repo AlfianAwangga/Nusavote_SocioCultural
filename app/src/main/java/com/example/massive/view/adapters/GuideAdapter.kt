@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.massive.databinding.ListGuideBinding
 import com.example.massive.model.GuideModel
-import com.example.massive.view.activities.bagian1GuideActivity
+import com.example.massive.view.activities.DetailGuideActivity
 
 class GuideAdapter(private val context: Context?, private val list: List<GuideModel>) : RecyclerView.Adapter<GuideAdapter.ViewHolder>() {
     class ViewHolder(val binding : ListGuideBinding) : RecyclerView.ViewHolder(binding.root){
@@ -26,7 +26,7 @@ class GuideAdapter(private val context: Context?, private val list: List<GuideMo
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder){
             with(list[position]){
-                binding.ivGuide.setImageResource(this.image_guide)
+//                binding.ivGuide.setImageResource(this.image_guide)
                 binding.judulGuide.text = this.judul
                 binding.deskripsiGuide.text = this.deskripsi
 
@@ -36,7 +36,7 @@ class GuideAdapter(private val context: Context?, private val list: List<GuideMo
                     bundle.putString("judul", this.judul)
                     bundle.putString("deskripsi", this.deskripsi)
 
-                    val intent = Intent(context, bagian1GuideActivity::class.java)
+                    val intent = Intent(context, DetailGuideActivity::class.java)
                     intent.putExtras(bundle)
                     context?.startActivity(intent)
                 }

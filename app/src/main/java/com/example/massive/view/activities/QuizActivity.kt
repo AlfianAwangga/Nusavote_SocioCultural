@@ -1,5 +1,6 @@
 package com.example.massive.view.activities
 
+import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
 import android.content.res.ColorStateList
@@ -7,7 +8,9 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
+import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.TextView
@@ -55,6 +58,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
         setContentView(binding.root)
 
         showQuestion()
+        binding.ivQuizBack.setOnClickListener(this)
         binding.btnPeriksa.setOnClickListener(this)
         binding.btnLanjut.setOnClickListener(this)
         binding.rgOptions.setOnCheckedChangeListener{ _,_ ->
@@ -102,7 +106,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
         val correctAnswerIndex = answer[currentQuestionIndex]
 
         if (selectedAnswer == correctAnswerIndex){
-            score += 10
+            score += 100/question.size
             correct++
             correctOptionColor(selectedAnswer)
             ResultColor(1)
@@ -142,6 +146,11 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
                 val selectedOption = binding.rgOptions.checkedRadioButtonId
                 val selectedOptionIndex = binding.rgOptions.indexOfChild(findViewById(selectedOption))
                 checkAnswer(selectedOptionIndex)
+
+                //cek apabila soal telah selesai
+                if (currentQuestionIndex == question.size-1){
+                    binding.btnLanjut.text = "Lihat Skor"
+                }
             }
 
             R.id.btn_lanjut -> {
@@ -170,32 +179,56 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
                 if (currentQuestionIndex < question.size){
                     showQuestion()
                 }else{
-                    val message = "Score Anda : $score\n" +
-                            "Jumlah Benar : $correct\n" +
-                            "Jumlah Salah : $wrong"
-                    showCustomDialogBox(message)
                     binding.pbQuiz.progress = 0
+                    val message = "Jumlah Benar : $correct\n" +
+                            "Jumlah Salah : $wrong"
+                    showResultDialog(message, score)
                 }
+            }
+            R.id.iv_quiz_back -> {
+                val intent = Intent()
+//                intent.putExtra("key", 1)
+                setResult(Activity.RESULT_OK, intent)
+                finish()
             }
         }
     }
 
-    private fun showCustomDialogBox(message: String) {
+    private fun showResultDialog(message: String, score: Int) {
         val dialog  = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(false)
         dialog.setContentView(R.layout.dialog_result)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setGravity(Gravity.BOTTOM)
 
         val ToHome : Button = dialog.findViewById(R.id.toHome)
-        val ScoreDesc : TextView = dialog.findViewById(R.id.scoreResult)
+        val Share : Button = dialog.findViewById(R.id.btn_share)
+        val Score : TextView = dialog.findViewById(R.id.scoreResult)
+        val result : TextView = dialog.findViewById(R.id.tv_detail_result)
+        val status : TextView = dialog.findViewById(R.id.tv_status_result)
 
-        ScoreDesc.text = message
+        Score.text = score.toString()
+        result.text = message
+
+        if (score < 70) {
+            status.text = "Coba Lagi Nanti Yah."
+        } else {
+            status.text = "Kerja Bagus, Pertahankan."
+        }
 
         ToHome.setOnClickListener{
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+            val intent = Intent()
+//                intent.putExtra("key", 1)
+            setResult(Activity.RESULT_OK, intent)
+            finish()
         }
+
+        Share.setOnClickListener {
+
+        }
+
         dialog.show()
     }
 }

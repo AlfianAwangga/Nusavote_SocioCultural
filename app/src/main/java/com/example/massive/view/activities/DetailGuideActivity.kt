@@ -6,29 +6,29 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.massive.R
-import com.example.massive.databinding.ActivityBagian1GuideBinding
-import com.example.massive.databinding.FragmentGuideBinding
-import com.example.massive.view.fragments.GuideFragment
+import com.example.massive.databinding.ActivityDetailGuideBinding
 
-private lateinit var binding: ActivityBagian1GuideBinding
+private lateinit var binding: ActivityDetailGuideBinding
 
-class bagian1GuideActivity : AppCompatActivity(), View.OnClickListener {
+class DetailGuideActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityBagian1GuideBinding.inflate(layoutInflater)
+        binding = ActivityDetailGuideBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val bundle = intent.extras
 
-        binding.tvGuide1.text = bundle?.getString("judul")
+        binding.tvToolbarGuide.text = bundle?.getString("judul")
+        binding.tvDetailJudulGuide.text = bundle?.getString("judul")
+        binding.tvDetailDeskripsiGuide.text = bundle?.getString("deskripsi")
 
-        binding.ivBackGuide1.setOnClickListener(this)
+        binding.ivBackGuide.setOnClickListener(this)
 
     }
 
     override fun onClick(v: View) {
         when (v.id){
-            R.id.iv_back_guide_1 -> {
+            R.id.iv_back_guide -> {
                 val intent = Intent()
                 intent.putExtra("key", 1)
                 setResult(Activity.RESULT_OK, intent)

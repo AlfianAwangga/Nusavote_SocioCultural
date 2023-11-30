@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="judulGuide">
-        <item>Judul 1</item>
-        <item>Judul 2</item>
-        <item>Judul 3</item>
-        <item>Judul 4</item>
+        <item>Materi 1</item>
+        <item>Materi 2</item>
+        <item>Materi 3</item>
+        <item>Materi 4</item>
     </string-array>
 
     <string-array name="deskripsiGuide">
-        <item>Lorem ipsum dolor sit amet,\nconsectetur adipisicing elit.\nAccusamus architecto cumque\ndeserunt eligendi esse et\nharum illo ipsum minima</item>
-        <item>Lorem ipsum dolor sit amet,\nconsectetur adipisicing elit.\nAccusamus architecto cumque\ndeserunt eligendi esse et</item>
-        <item>Lorem ipsum dolor sit amet,\nconsectetur adipisicing elit.\nAccusamus architecto cumque\ndeserunt eligendi esse et\nharum illo ipsum minima</item>
-        <item>Lorem ipsum dolor sit amet,\nconsectetur adipisicing elit.\nAccusamus architecto cumque\ndeserunt eligendi esse et</item>
+        <item>Deskripsi Materi 1</item>
+        <item>Deskripsi Materi 2</item>
+        <item>Deskripsi Materi 3</item>
+        <item>Deskripsi Materi 4</item>
     </string-array>
 
 </resources>

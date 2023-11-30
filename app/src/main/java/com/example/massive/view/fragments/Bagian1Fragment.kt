@@ -34,35 +34,68 @@ class Bagian1Fragment(private val context: Context?) : Fragment(), View.OnClickL
     private fun setUnitAdapter() {
         val datalist: MutableList<UnitModel> = mutableListOf()
 
-        namaUnit().forEachIndexed{ index, nama ->
-            datalist.add(UnitModel(nama, deskripsiUnit()[index], panduanUnit()[index], stages()))
+        namaUnit().forEachIndexed { index, nama ->
+            datalist.add(UnitModel(nama, deskripsiUnit()[index], panduanUnit()[index], stages()[index]))
         }
 
         binding.rvUnitBagian1.adapter = UnitAdapter(context, datalist)
     }
 
-    private fun namaUnit() : Array<String> {
+    private fun namaUnit(): Array<String> {
         return resources.getStringArray(R.array.namaUnit)
     }
-    private fun deskripsiUnit() : Array<String> {
+
+    private fun deskripsiUnit(): Array<String> {
         return resources.getStringArray(R.array.deskripsiUnit)
     }
-    private fun panduanUnit() : Array<String> {
+
+    private fun panduanUnit(): Array<String> {
         return resources.getStringArray(R.array.panduanUnit)
     }
-    private fun stages() : List<StageModel> {
+
+    private fun stages(): List<List<StageModel>> {
         return listOf(
-            StageModel(R.drawable.icon_star),
-            StageModel(R.drawable.icon_locked),
-            StageModel(R.drawable.icon_locked),
-            StageModel(R.drawable.icon_locked),
-            StageModel(R.drawable.icon_task),
+            listOf(
+                StageModel(R.drawable.icon_star),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_task),
+            ),
+            listOf(
+                StageModel(R.drawable.icon_forward),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_task),
+            ),
+            listOf(
+                StageModel(R.drawable.icon_forward),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_task),
+            ),
+            listOf(
+                StageModel(R.drawable.icon_forward),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_task),
+            ),
+            listOf(
+                StageModel(R.drawable.icon_forward),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_locked),
+                StageModel(R.drawable.icon_task),
+            )
         )
     }
 
     override fun onClick(v: View) {
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
-        when(v.id) {
+        when (v.id) {
             R.id.iv_nav_next -> {
                 viewPager?.currentItem = 1
             }
