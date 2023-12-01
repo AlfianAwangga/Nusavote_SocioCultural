@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primaryLight"
+    android:paddingBottom="32dp"
+    tools:context=".view.activities.TentangKamiActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/textView12"
+        style="@style/tv.interBold.24.black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:gravity="center"
+        android:text="Tentang\nTim Kami"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tv_pm"
+        android:layout_width="310dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/layer_shadow_grey"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12">
+
+        <TextView
+            android:id="@+id/textView15"
+            style="@style/tv.interBold.16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Project Manager"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView16"
+            style="@style/tv.interMedium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Haris Munahar (Web)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tv_sm"
+        android:layout_width="310dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/layer_shadow_grey"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pm">
+
+        <TextView
+            android:id="@+id/textView17"
+            style="@style/tv.interBold.16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scrum Master"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView19"
+            style="@style/tv.interMedium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Birull Hasibuan (Mobile)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <TextView
+            style="@style/tv.interMedium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wahyu Prayoga (Web)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tv_hacker"
+        android:layout_width="310dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/layer_shadow_grey"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sm">
+
+        <TextView
+            android:id="@+id/textView18"
+            style="@style/tv.interBold.16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hacker"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView20"
+            style="@style/tv.interMedium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alfian Diva Awangga (Mobile)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <TextView
+            android:id="@+id/textView21"
+            style="@style/tv.interMedium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kristo Pandapotan Samosir (Mobile)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <TextView
+            style="@style/tv.interMedium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I Nengah Pranata Adhi S (Web)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tv_hipster"
+        android:layout_width="310dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/layer_shadow_grey"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hacker">
+
+        <TextView
+            android:id="@+id/textView22"
+            style="@style/tv.interBold.16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hipster"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView23"
+            style="@style/tv.interMedium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Muhammad Fachrizal A (Mobile)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+        <TextView
+            android:id="@+id/textView24"
+            style="@style/tv.interMedium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Linda Erlinda Sari (Mobile)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+        <TextView
+            android:id="@+id/textView25"
+            style="@style/tv.interMedium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nurdila (Web)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+        <TextView
+            android:id="@+id/textView26"
+            style="@style/tv.interMedium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Galih Yoga Abimanyu (Web)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <TextView
+            style="@style/tv.interMedium.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fawwaz Mubarak (Web)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView13"
+        style="@style/tv.interMedium.20.primaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Misi Kami"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hipster" />
+
+    <TextView
+        style="@style/tv.interMedium.12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:gravity="center"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Menjadi media yang memukau untuk mempelajari\nberagam bahasa daerah dengan mudah melalui\npelajaran interaktif, percakapan sehari-hari mendalami\ndan memahami kekayaan bahasa dan budaya lokal.\nDengan beragam sumber daya, pelajaran audio, dan\nfitur interaktif, web ini memungkinkan Anda merasakan\nkeindahan dan kedalaman bahasa daerah dengan mudah,\nsambil menjaga warisan budaya yang tak ternilai."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

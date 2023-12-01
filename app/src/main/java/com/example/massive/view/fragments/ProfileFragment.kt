@@ -14,8 +14,9 @@ import com.example.massive.util.customSharePreference
 import com.example.massive.view.activities.EditProfileActivity
 import com.example.massive.view.activities.HomeActivity
 import com.example.massive.view.activities.MainActivity
+import com.example.massive.view.activities.TentangKamiActivity
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentProfileBinding
     private lateinit var pref : customSharePreference
 
@@ -27,6 +28,8 @@ class ProfileFragment : Fragment() {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
         init()
+
+        binding.imgTentangKami.setOnClickListener(this)
 
         editProfil()
 
@@ -48,6 +51,15 @@ class ProfileFragment : Fragment() {
 
     private fun init() {
         pref =  customSharePreference(requireContext())
+    }
+
+    override fun onClick(v: View) {
+        when(v.id){
+            R.id.img_tentangKami -> {
+                val intent = Intent(activity, TentangKamiActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 
 
