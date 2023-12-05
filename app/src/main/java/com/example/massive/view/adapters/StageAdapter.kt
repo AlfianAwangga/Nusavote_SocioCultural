@@ -17,6 +17,7 @@ import com.example.massive.databinding.ListUnitBinding
 import com.example.massive.model.StageModel
 import com.example.massive.model.UnitModel
 import com.example.massive.view.activities.QuizActivity
+import com.example.massive.view.activities.SplashQuizActivity
 import com.example.massive.view.fragments.HomeFragment
 
 class StageAdapter(private val context: Context?, private val list: List<StageModel>) : RecyclerView.Adapter<StageAdapter.ViewHolder>(){
@@ -57,7 +58,7 @@ class StageAdapter(private val context: Context?, private val list: List<StageMo
                 }
 
                 binding.ibStage.setOnClickListener{
-                    val intent = Intent(context, QuizActivity::class.java)
+                    val intent = Intent(context, SplashQuizActivity::class.java)
                     context?.startActivity(intent)
                 }
             }

@@ -18,6 +18,9 @@
             android:name=".view.activities.TentangKamiActivity"
             android:exported="false" />
         <activity
+            android:name=".view.activities.SplashQuizActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activities.EditProfileActivity"
             android:exported="false" />
         <activity
@@ -31,8 +34,8 @@
             android:exported="false" />
         <activity
             android:name=".view.activities.HomeActivity"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.activities.RegisterActivity"
             android:exported="false" />
