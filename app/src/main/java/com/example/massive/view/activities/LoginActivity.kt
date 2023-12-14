@@ -1,20 +1,20 @@
 package com.example.massive.view.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.example.massive.R
+import com.example.massive.auth.GoogleSignInAuth
 import com.example.massive.databinding.ActivityLoginBinding
 import com.example.massive.util.customSharePreference
 
-private lateinit var binding: ActivityLoginBinding
-private lateinit var pref : customSharePreference
-
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
-
+    private lateinit var binding: ActivityLoginBinding
+    private lateinit var pref : customSharePreference
+    private lateinit var google : GoogleSignInAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -23,13 +23,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         binding.etUsernameLogin.addTextChangedListener(loginTextWatcher)
         binding.etPasswordLogin.addTextChangedListener(loginTextWatcher)
 
-        // inisialisasi custom share preference
         pref = customSharePreference(this@LoginActivity)
-
+        google = GoogleSignInAuth(this, binding.pbSigninGoogle)
+        google.initialize()
 
         binding.btnMasuk.setOnClickListener(this)
         binding.ivBackLogin.setOnClickListener(this)
         binding.tvLupaPassword.setOnClickListener(this)
+        binding.btnGoogleLogin.setOnClickListener(this)
     }
 
     private var loginTextWatcher = object :TextWatcher{
@@ -66,6 +67,12 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             R.id.tv_lupa_password->{
                 val intent = Intent(this@LoginActivity, LupaActivity::class.java)
                 startActivity(intent)
+            }
+            R.id.btn_google_login->{
+                pref.saveLogin(1).let {
+                    binding.pbSigninGoogle.visibility = View.VISIBLE
+                    google.signInGoogle()
+                }
             }
         }
     }

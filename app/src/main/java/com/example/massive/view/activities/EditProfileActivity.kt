@@ -2,24 +2,27 @@ package com.example.massive.view.activities
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.example.massive.R
+import com.example.massive.auth.GoogleSignInAuth
 import com.example.massive.databinding.ActivityEditProfileBinding
 import com.example.massive.util.customSharePreference
 
-
-private lateinit var binding: ActivityEditProfileBinding
-private lateinit var pref : customSharePreference
-private var PickImageReq = 1 // Konstanta untuk kode permintaan pemilihan gambar
-
 class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
+    private lateinit var binding: ActivityEditProfileBinding
+    private lateinit var pref : customSharePreference
+    private var PickImageReq = 1 // Konstanta untuk kode permintaan pemilihan gambar
+    private lateinit var google: GoogleSignInAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        google = GoogleSignInAuth(this, binding.btnSimpanProfile)
+        google.initialize()
 
         binding.btnPilihFile.setOnClickListener(this)
         binding.ivBackProfile.setOnClickListener(this)
@@ -49,6 +52,7 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
     private fun logout() {
         binding.btnLogout.setOnClickListener{
             pref.saveLogin(0).let {
+                google.signOutGoogle()
                 val intent = Intent(this@EditProfileActivity, MainActivity::class.java)
                 startActivity(intent)
             }
