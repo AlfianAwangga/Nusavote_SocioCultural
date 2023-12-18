@@ -6,7 +6,9 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestOptions
@@ -15,10 +17,11 @@ import com.example.massive.auth.FacebookLoginAuth
 import com.example.massive.auth.GoogleSignInAuth
 import com.example.massive.databinding.ActivityEditProfileBinding
 import com.example.massive.util.customSharePreference
+import com.example.massive.view.fragments.ProfileFragment
 
 class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityEditProfileBinding
-    private lateinit var pref : customSharePreference
+    private lateinit var pref: customSharePreference
     private var PickImageReq = 1 // Konstanta untuk kode permintaan pemilihan gambar
     private lateinit var google: GoogleSignInAuth
     private lateinit var fb: FacebookLoginAuth
@@ -30,6 +33,8 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnPilihFile.setOnClickListener(this)
         binding.ivBackProfile.setOnClickListener(this)
 
+
+
         init()
         dataUserEditText()
         logout()
@@ -38,7 +43,7 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun simpan() {
-        binding.btnSimpanProfile.setOnClickListener{
+        binding.btnSimpanProfile.setOnClickListener {
             val intent = Intent()
             intent.putExtra("key", 1)
             setResult(Activity.RESULT_OK, intent)
@@ -46,14 +51,16 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+
     private fun dataUserEditText() {
         val bundle = intent.extras
         binding.etNamaProfile.setText(bundle?.getString("nama"))
-        binding.etEmailProfile.setText(bundle?.getString("email"))
+        binding.etUsernameProfile.setText(bundle?.getString("username"))
 
     }
+
     private fun logout() {
-        binding.btnLogout.setOnClickListener{
+        binding.btnLogout.setOnClickListener {
             pref.saveLogin(0).let {
                 google.signOutGoogle()
                 fb.logoutFacebook()
@@ -63,7 +70,7 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun init(){
+    private fun init() {
         pref = customSharePreference(this@EditProfileActivity)
         google = GoogleSignInAuth(this, binding.btnSimpanProfile)
         google.initialize()
@@ -72,12 +79,13 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        when (v.id){
+        when (v.id) {
             R.id.btn_pilih_file -> {
-                val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                val intent =
+                    Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
                 startActivityForResult(intent, PickImageReq)
-
             }
+
             R.id.iv_back_profile -> {
                 val intent = Intent()
                 intent.putExtra("key", 1)
@@ -93,12 +101,12 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
         if (requestCode == PickImageReq && resultCode == RESULT_OK && data != null) {
             val selectedImage: Uri? = data.data
             binding.imgProfileEdit.setImageURI(selectedImage)
+
             val requestOptions = RequestOptions().transform(CircleCrop())
             Glide.with(this)
                 .load(selectedImage)
                 .apply(requestOptions)
                 .into(binding.imgProfileEdit)
-
         }
     }
 }

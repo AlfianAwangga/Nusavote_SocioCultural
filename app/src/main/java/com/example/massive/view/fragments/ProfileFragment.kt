@@ -41,7 +41,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         binding.btnEditProfile.setOnClickListener{
             val bundle = Bundle()
             bundle.putString("nama", this.binding.tvNamaUser.text.toString())
-            bundle.putString("email", this.binding.tvEmailUser.text.toString())
+            bundle.putString("username", this.binding.tvUsernameUser.text.toString())
 
             val intent = Intent(activity, EditProfileActivity::class.java)
             intent.putExtras(bundle)

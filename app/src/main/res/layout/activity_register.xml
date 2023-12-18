@@ -83,20 +83,20 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_email"
-        style="@style/input.FilledGrey.email"
+        style="@style/input.FilledGrey.date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:hint="Email"
+        android:hint="Tanggal Lahir"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_username">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:inputType="textEmailAddress"
-            android:id="@+id/et_email"
+            android:inputType="date"
+            android:id="@+id/et_tglLahir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent" />

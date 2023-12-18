@@ -226,7 +226,11 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
         }
 
         Share.setOnClickListener {
+            val shareIntent = Intent(Intent.ACTION_SEND)
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Saya Mendapatkan Score $score, Ayo kita Main NusaVote, Aplikasi Yang Sangat Menyenangkan!!!!!")
 
+            startActivity(Intent.createChooser(shareIntent, "Bagikan Ke"))
         }
 
         dialog.show()

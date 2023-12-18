@@ -101,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@id/textView10" />
 
     <TextView
-        android:id="@+id/tv"
+        android:id="@+id/tv_user"
         style="@style/tv.interSemiBold.16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -121,30 +121,30 @@
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv" />
+        app:layout_constraintTop_toBottomOf="@id/tv_user" />
 
-    <TextView
-        android:id="@+id/tv2"
-        style="@style/tv.interSemiBold.16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_username_profile" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv2"-->
+<!--        style="@style/tv.interSemiBold.16"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Email"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/et_username_profile" />-->
 
-    <EditText
-        android:id="@+id/et_email_profile"
-        style="@style/et.FilledGrey.email"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv2" />
+<!--    <EditText-->
+<!--        android:id="@+id/et_email_profile"-->
+<!--        style="@style/et.FilledGrey.email"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv2" />-->
 
     <TextView
         android:id="@+id/tv_sound"
@@ -155,7 +155,7 @@
         android:layout_marginTop="16dp"
         android:text="Sound effects"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/et_username_profile" />
 
     <Switch
         android:id="@+id/switch_sound"
@@ -164,7 +164,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/et_username_profile" />
 
     <TextView
         android:id="@+id/tv_animation"
