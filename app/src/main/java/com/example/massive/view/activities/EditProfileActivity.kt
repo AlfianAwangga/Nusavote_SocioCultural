@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestOptions
 import com.example.massive.R
+import com.example.massive.auth.FacebookLoginAuth
 import com.example.massive.auth.GoogleSignInAuth
 import com.example.massive.databinding.ActivityEditProfileBinding
 import com.example.massive.util.customSharePreference
@@ -20,13 +21,11 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var pref : customSharePreference
     private var PickImageReq = 1 // Konstanta untuk kode permintaan pemilihan gambar
     private lateinit var google: GoogleSignInAuth
+    private lateinit var fb: FacebookLoginAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        google = GoogleSignInAuth(this, binding.btnSimpanProfile)
-        google.initialize()
 
         binding.btnPilihFile.setOnClickListener(this)
         binding.ivBackProfile.setOnClickListener(this)
@@ -57,6 +56,7 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnLogout.setOnClickListener{
             pref.saveLogin(0).let {
                 google.signOutGoogle()
+                fb.logoutFacebook()
                 val intent = Intent(this@EditProfileActivity, MainActivity::class.java)
                 startActivity(intent)
             }
@@ -65,6 +65,10 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun init(){
         pref = customSharePreference(this@EditProfileActivity)
+        google = GoogleSignInAuth(this, binding.btnSimpanProfile)
+        google.initialize()
+        fb = FacebookLoginAuth(this)
+        fb.initialize()
     }
 
     override fun onClick(v: View) {

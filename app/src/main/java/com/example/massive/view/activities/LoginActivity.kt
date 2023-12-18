@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.massive.R
+import com.example.massive.auth.FacebookLoginAuth
 import com.example.massive.auth.GoogleSignInAuth
 import com.example.massive.databinding.ActivityLoginBinding
 import com.example.massive.util.customSharePreference
@@ -15,6 +16,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var pref : customSharePreference
     private lateinit var google : GoogleSignInAuth
+    private lateinit var fb : FacebookLoginAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -26,11 +28,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         pref = customSharePreference(this@LoginActivity)
         google = GoogleSignInAuth(this, binding.pbSigninGoogle)
         google.initialize()
+        fb = FacebookLoginAuth(this)
+        fb.initialize()
 
         binding.btnMasuk.setOnClickListener(this)
         binding.ivBackLogin.setOnClickListener(this)
         binding.tvLupaPassword.setOnClickListener(this)
         binding.btnGoogleLogin.setOnClickListener(this)
+        binding.btnFacebookLogin.setOnClickListener(this)
     }
 
     private var loginTextWatcher = object :TextWatcher{
@@ -72,6 +77,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 pref.saveLogin(1).let {
                     binding.pbSigninGoogle.visibility = View.VISIBLE
                     google.signInGoogle()
+                }
+            }
+            R.id.btn_facebook_login->{
+                pref.saveLogin(1).let {
+                    fb.loginFacebook()
                 }
             }
         }

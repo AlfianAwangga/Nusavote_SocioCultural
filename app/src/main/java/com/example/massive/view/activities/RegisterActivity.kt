@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.massive.R
+import com.example.massive.auth.FacebookLoginAuth
 import com.example.massive.auth.GoogleSignInAuth
 import com.example.massive.databinding.ActivityRegisterBinding
 import com.example.massive.util.customSharePreference
@@ -15,6 +16,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var pref: customSharePreference
     private lateinit var google: GoogleSignInAuth
+    private lateinit var fb: FacebookLoginAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
@@ -23,6 +25,8 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         pref = customSharePreference(this)
         google = GoogleSignInAuth(this, binding.pbSigninGoogle)
         google.initialize()
+        fb = FacebookLoginAuth(this)
+        fb.initialize()
 
         binding.etNamaLengkap.addTextChangedListener(loginTextWatcher)
         binding.etUsername.addTextChangedListener(loginTextWatcher)
@@ -33,6 +37,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnRegister.setOnClickListener(this)
         binding.ivBack.setOnClickListener(this)
         binding.btnGoogleRegist.setOnClickListener(this)
+        binding.btnFacebookRegist.setOnClickListener(this)
     }
 
     private var loginTextWatcher = object : TextWatcher {
@@ -81,6 +86,11 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                 pref.saveLogin(1).let {
                     binding.pbSigninGoogle.visibility = View.VISIBLE
                     google.signInGoogle()
+                }
+            }
+            R.id.btn_facebook_regist -> {
+                pref.saveLogin(1).let {
+                    fb.loginFacebook()
                 }
             }
         }
