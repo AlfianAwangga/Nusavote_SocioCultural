@@ -1,5 +1,6 @@
 package com.example.massive.view.activities
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -32,11 +33,11 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         init()
-
+        setOnAction()
 
     }
 
-    private fun init(){
+    private fun init() {
         pref = customSharePreference(this)
         google = GoogleSignInAuth(this, binding.pbSigninGoogle)
         google.initialize()
@@ -46,7 +47,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         viewModel = ViewModelProvider(this, viewModelFactory)[UserViewModel::class.java]
     }
 
-    private fun setOn(){
+    private fun setOnAction() {
         binding.etNamaLengkap.addTextChangedListener(loginTextWatcher)
         binding.etUsername.addTextChangedListener(loginTextWatcher)
         binding.etTglLahir.addTextChangedListener(loginTextWatcher)
@@ -91,30 +92,41 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                     binding.tilConfirmPassword.error = "Konfirmasi Password Salah, Coba Lagi!"
                 } else {
                     binding.tilConfirmPassword.error = null
-                    viewModel.addUser(UserModel(tglLahir, namaLengkap, username, "user", confirmPassword, password))
-
+                    viewModel.addUser(
+                        UserModel(
+                            tglLahir,
+                            namaLengkap,
+                            username,
+                            "user",
+                            confirmPassword,
+                            password
+                        )
+                    )
                     viewModel.users.observe(this, Observer {
                         if (it.isSuccessful) {
-                            Toast.makeText(this, "registrasi berhasil", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                             startActivity(intent)
-                        }
-                        else {
-                            Toast.makeText(this, it.errorBody().toString(), Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Registrasi Gagal", Toast.LENGTH_SHORT)
+                                .show()
                         }
                     })
                 }
             }
+
             R.id.iv_back -> {
-                val intent = Intent(this@RegisterActivity, MainActivity::class.java)
-                startActivity(intent)
+                setResult(Activity.RESULT_OK, Intent())
+                finish()
             }
+
             R.id.btn_google_regist -> {
                 pref.saveLogin(1).let {
                     binding.pbSigninGoogle.visibility = View.VISIBLE
                     google.signInGoogle()
                 }
             }
+
             R.id.btn_facebook_regist -> {
                 pref.saveLogin(1).let {
                     fb.loginFacebook()
