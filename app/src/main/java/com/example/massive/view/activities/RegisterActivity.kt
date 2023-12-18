@@ -4,30 +4,49 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.massive.R
 import com.example.massive.auth.FacebookLoginAuth
 import com.example.massive.auth.GoogleSignInAuth
 import com.example.massive.databinding.ActivityRegisterBinding
+import com.example.massive.factory.UserViewModelFactory
+import com.example.massive.model.UserModel
+import com.example.massive.repository.UserRepository
 import com.example.massive.util.customSharePreference
+import com.example.massive.viewModel.UserViewModel
 
 class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var pref: customSharePreference
     private lateinit var google: GoogleSignInAuth
     private lateinit var fb: FacebookLoginAuth
+    private lateinit var viewModel: UserViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        init()
+
+
+    }
+
+    private fun init(){
         pref = customSharePreference(this)
         google = GoogleSignInAuth(this, binding.pbSigninGoogle)
         google.initialize()
         fb = FacebookLoginAuth(this)
         fb.initialize()
+        val viewModelFactory = UserViewModelFactory(UserRepository())
+        viewModel = ViewModelProvider(this, viewModelFactory)[UserViewModel::class.java]
+    }
 
+    private fun setOn(){
         binding.etNamaLengkap.addTextChangedListener(loginTextWatcher)
         binding.etUsername.addTextChangedListener(loginTextWatcher)
         binding.etTglLahir.addTextChangedListener(loginTextWatcher)
@@ -72,16 +91,24 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                     binding.tilConfirmPassword.error = "Konfirmasi Password Salah, Coba Lagi!"
                 } else {
                     binding.tilConfirmPassword.error = null
-                    val intent = Intent(this@RegisterActivity, HomeActivity::class.java)
-                    startActivity(intent)
+                    viewModel.addUser(UserModel(tglLahir, namaLengkap, username, "user", confirmPassword, password))
+
+                    viewModel.users.observe(this, Observer {
+                        if (it.isSuccessful) {
+                            Toast.makeText(this, "registrasi berhasil", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+                            startActivity(intent)
+                        }
+                        else {
+                            Toast.makeText(this, it.errorBody().toString(), Toast.LENGTH_SHORT).show()
+                        }
+                    })
                 }
             }
-
             R.id.iv_back -> {
                 val intent = Intent(this@RegisterActivity, MainActivity::class.java)
                 startActivity(intent)
             }
-
             R.id.btn_google_regist -> {
                 pref.saveLogin(1).let {
                     binding.pbSigninGoogle.visibility = View.VISIBLE
