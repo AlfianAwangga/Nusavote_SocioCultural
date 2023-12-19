@@ -1,17 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="judulGuide">
-        <item>Materi 1</item>
-        <item>Materi 2</item>
-        <item>Materi 3</item>
-        <item>Materi 4</item>
+        <item>Salam Sapa</item>
+        <item>Kata Kerja</item>
+        <item>Kosakata Dasar Bagian Tubuh</item>
+        <item>Kosakata Ungguh-ungguh Basa</item>
+        <item>Geguritan</item>
     </string-array>
 
     <string-array name="deskripsiGuide">
-        <item>Deskripsi Materi 1</item>
-        <item>Deskripsi Materi 2</item>
-        <item>Deskripsi Materi 3</item>
-        <item>Deskripsi Materi 4</item>
+        <item>Materi tentang percakapan sehari-hari</item>
+        <item>Kata kerja dasar Bahasa Jawa</item>
+        <item>Mempelajari kosakata dasar bagian tubuh dalam Bahasa Jawa</item>
+        <item>Mempelajari jenis-jenis dari unggah-ungguh  basa</item>
+        <item>Pengertian Geguritan</item>
+    </string-array>
+
+    <string-array name="isiGuide">
+        <item>
+            Sugeng rawuh: Selamat datang\n
+            Matur nuwun: Terima kasih\n
+            Apa kabar?: Piye kabare?\n
+            Selamat pagi: Sugeng enjang\n
+            Selamat siang: Sugeng tengah\n
+            Selamat sore: Sugeng dalu\n
+            Selamat malam: Sugeng dalu\n
+            Nama saya [nama Anda]: Ingkang\n
+            jenengipun [nama Anda]\n
+            Maaf: Sami mawon
+        </item>
+        <item>
+            Kata Kerja\n
+            Baca = Moco\n
+            Bangun = Tangi\n
+            Belajar = Sinau\n
+            Beli = Tuku\n
+            Buang Air Besar = Ngising\n
+            Buat = Gawe\n
+            Duduk = Lungguh\n
+            Jalan = Mlaku\n
+            Keluar = Metu\n
+            Lari = Mlayu\n
+            Makan = Mangan\n
+            Mandi = Adhus\n
+            Masuk = Mlebu\n
+            Minum = Ngombe\n
+            Naik = Numpak\n
+            Tidur = Turu\n
+        </item>
+        <item>
+            Bagian Tubuh\n
+            Indonesia | Jawa\n
+            Kepala = Endhas\n
+            Rambut = Rambut\n
+            Mata = Mata\n
+            Hidung = Irung\n
+            Mulut = Cangkem\n
+            Telinga = Kuping\n
+            Leher = Gulu\n
+            Bahu = Pundhak\n
+            Punggung = Geger\n
+            Siku = Sikut\n
+            Tangan = Tangan\n
+            Jari = Driji\n
+            Perut = Weteng\n
+            Paha = Pupu\n
+            Lutut = Dhengkul\n
+            Kaki = Sikil\n
+        </item>
+        <item>
+            Kosa Kata Bahasa Jawa\n\n1. Kata Netral\nKata netral yaitu kata yang tidak memiliki bentuk lain,  baik  Ngoko, Krama  dan  Krama  inggil  (Sasangka,  2010: 52).\n\n2. Kata Ngoko\nKata Ngoko yaitu kata yang memiliki bentuk lain (Sasangka,  2010:29).  Bentuk  lain  tersebut,  kata  NgokoBuku bisa diubah  menjadi  kata  Krama  dan  Krama  inggil\n\n
+            3. Kata Krama (Madya)\nKata Krama sebagai bentuk sopan dari kata Ngoko(Sasangka, 2010:33). Kata Krama tersebut, ada dua jenis yaitu  bentuk  hampir  sama  dengan  Ngoko  dan  bentuk  berbeda dengan Ngoko\n\n
+            4. Kata Krama Inggil \nKata Krama inggil yaitu kata yang memiliki derajat paling tinggi dan sopan. Kata tersebut, digunakan untuk orang kedua (O2) dan ketiga (O3)
+        </item>
+        <item>
+            Geguritan  merupakan  puisi  dalam  karyas  sastra  Jawa  modern  yang  tidak  terikat  oleh  aturan.  Geguritan  mempunyai  kemiripan  dengan  genre  sastra  luar,  sehingga  memiliki  unsur-unsur  yang  serupa
+        </item>
     </string-array>
 
 </resources>

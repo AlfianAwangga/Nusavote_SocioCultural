@@ -35,6 +35,7 @@ class GuideAdapter(private val context: Context?, private val list: List<GuideMo
                     val bundle = Bundle()
                     bundle.putString("judul", this.judul)
                     bundle.putString("deskripsi", this.deskripsi)
+                    bundle.putString("isi", this.isi)
 
                     val intent = Intent(context, DetailGuideActivity::class.java)
                     intent.putExtras(bundle)

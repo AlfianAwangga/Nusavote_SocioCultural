@@ -35,20 +35,16 @@ class GuideFragment : Fragment() {
         val listData: MutableList<GuideModel> = mutableListOf()
 
         judulGuide().forEachIndexed{index,nama ->
-            listData.add(GuideModel(img_guide().get(index), judulGuide()[index], deskripsiGuide()[index]))
+            listData.add(GuideModel(judulGuide()[index], deskripsiGuide()[index],isiGuide()[index]))
         }
 
         adapter = GuideAdapter(context,listData)
         binding.rvGuide.adapter = adapter
     }
 
+    private fun isiGuide(): Array<String> = resources.getStringArray(R.array.isiGuide)
+
     private fun judulGuide(): Array<String> = resources.getStringArray(R.array.judulGuide)
     private fun deskripsiGuide(): Array<String> = resources.getStringArray(R.array.deskripsiGuide)
 
-    private fun img_guide():List<Int> = listOf(
-        R.drawable.icon_guide,
-        R.drawable.icon_locked,
-        R.drawable.icon_star,
-        R.drawable.icon_task
-    )
 }

@@ -34,7 +34,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
         init()
         setOnAction()
-
+        setOnAction()
     }
 
     private fun init() {

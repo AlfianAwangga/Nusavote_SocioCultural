@@ -1,120 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.activities.DetailGuideActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/line_bottom"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_back_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/icon_back"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_toolbar_guide"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_toolbar_guide" />
+
+                <TextView
+                    android:id="@+id/tv_toolbar_guide"
+                    style="@style/tv.interMedium.20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Judul Materi"
+                    android:textColor="@color/grey1"
+                    app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:id="@+id/tv_detail_judul_guide"
+            style="@style/tv.interBlack.24"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Judul Materi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_figure_detail_guide"
+            app:layout_constraintTop_toTopOf="@+id/iv_figure_detail_guide" />
+
+        <TextView
+            android:id="@+id/tv_detail_deskripsi_guide"
+            style="@style/tv.interBold.16"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Deskripsi Materi"
+            app:layout_constraintEnd_toEndOf="@+id/tv_detail_judul_guide"
+            app:layout_constraintStart_toStartOf="@+id/tv_detail_judul_guide"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_judul_guide" />
+
+        <ImageView
+            android:id="@+id/iv_figure_detail_guide"
+            android:layout_width="100dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/figure_jawa"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-100dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/outlined_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_figure_detail_guide">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+            <TextView
+                android:id="@+id/tv_detail_isi_guide"
+                style="@style/tv.interSemiBold.20"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/line_bottom"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:padding="8dp"
+                android:text="@string/lorem"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/iv_back_guide"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/icon_back"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_toolbar_guide"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_toolbar_guide" />
-
-            <TextView
-                android:id="@+id/tv_toolbar_guide"
-                style="@style/tv.interMedium.20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Judul Materi"
-                android:textColor="@color/grey1"
-                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <TextView
-        android:id="@+id/tv_detail_judul_guide"
-        style="@style/tv.interBlack.24"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Judul Materi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/iv_figure_detail_guide"
-        app:layout_constraintTop_toTopOf="@+id/iv_figure_detail_guide" />
-
-    <TextView
-        android:id="@+id/tv_detail_deskripsi_guide"
-        style="@style/tv.interBold.16"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Deskripsi Materi"
-        app:layout_constraintEnd_toEndOf="@+id/tv_detail_judul_guide"
-        app:layout_constraintStart_toStartOf="@+id/tv_detail_judul_guide"
-        app:layout_constraintTop_toBottomOf="@+id/tv_detail_judul_guide" />
-
-    <ImageView
-        android:id="@+id/iv_figure_detail_guide"
-        android:layout_width="100dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/figure_jawa"
-        app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="-100dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/outlined_grey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_figure_detail_guide">
-
-        <TextView
-            android:id="@+id/tv_detail_isi_guide"
-            style="@style/tv.interSemiBold.16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center"
-            android:text="@string/lorem"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

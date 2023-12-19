@@ -21,6 +21,7 @@ class DetailGuideActivity : AppCompatActivity(), View.OnClickListener {
         binding.tvToolbarGuide.text = bundle?.getString("judul")
         binding.tvDetailJudulGuide.text = bundle?.getString("judul")
         binding.tvDetailDeskripsiGuide.text = bundle?.getString("deskripsi")
+        binding.tvDetailIsiGuide.text = bundle?.getString("isi")
 
         binding.ivBackGuide.setOnClickListener(this)
 
