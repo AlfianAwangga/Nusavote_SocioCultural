@@ -20,7 +20,11 @@ import com.example.massive.view.activities.QuizActivity
 import com.example.massive.view.activities.SplashQuizActivity
 import com.example.massive.view.fragments.HomeFragment
 
-class StageAdapter(private val context: Context?, private val list: List<StageModel>) : RecyclerView.Adapter<StageAdapter.ViewHolder>(){
+class StageAdapter(
+    private val context: Context?,
+    private val list: List<StageModel>,
+    private val onItemClick: (stage: StageModel, position:Int) -> Unit
+) : RecyclerView.Adapter<StageAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: ListStageBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -38,19 +42,22 @@ class StageAdapter(private val context: Context?, private val list: List<StageMo
             with(list[position]) {
                 binding.ibStage.setImageResource(this.image)
 
-                when(position) {
+                when (position) {
                     1 -> {
                         binding.ibStage.setBackgroundResource(R.drawable.layer_shadow_grey_circle)
                         binding.ibStage.isEnabled = false
                     }
+
                     2 -> {
                         binding.ibStage.setBackgroundResource(R.drawable.layer_shadow_grey_circle)
                         binding.ibStage.isEnabled = false
                     }
+
                     3 -> {
                         binding.ibStage.setBackgroundResource(R.drawable.layer_shadow_grey_circle)
                         binding.ibStage.isEnabled = false
                     }
+
                     4 -> {
                         binding.ibStage.setBackgroundResource(R.drawable.layer_shadow_grey_circle)
                         binding.ibStage.isEnabled = false
@@ -58,8 +65,7 @@ class StageAdapter(private val context: Context?, private val list: List<StageMo
                 }
 
                 binding.ibStage.setOnClickListener{
-                    val intent = Intent(context, SplashQuizActivity::class.java)
-                    context?.startActivity(intent)
+                    onItemClick.invoke(list[position], position+1)
                 }
             }
         }
