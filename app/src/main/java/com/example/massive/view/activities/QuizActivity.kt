@@ -16,6 +16,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.massive.R
 import com.example.massive.databinding.ActivityQuizBinding
+import com.example.massive.view.fragments.BottomSheetScoreFragment
 
 class QuizActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityQuizBinding
@@ -169,8 +170,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
                 binding.rbOption2.setBackgroundResource(R.drawable.selector_outlined_red_white)
                 binding.rbOption3.setBackgroundResource(R.drawable.selector_outlined_red_white)
                 binding.rbOption4.setBackgroundResource(R.drawable.selector_outlined_red_white)
-                binding.btnLanjut.backgroundTintList =
-                    ColorStateList.valueOf(resources.getColor(R.color.primary))
+                binding.btnLanjut.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.primary))
 
                 //option enable
                 binding.rbOption1.isEnabled = true
@@ -211,6 +211,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         tvMessageDialog.text = message
 
         btnYesDialog.setOnClickListener {
+            binding.pbQuiz.progress = 0
             val intent = Intent()
 //                intent.putExtra("key", 1)
             setResult(Activity.RESULT_OK, intent)
@@ -223,50 +224,8 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun showResultDialog(message: String, score: Int) {
-        val dialog = Dialog(this)
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setCancelable(false)
-        dialog.setContentView(R.layout.dialog_result)
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.window?.setLayout(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
-        dialog.window?.setGravity(Gravity.BOTTOM)
-
-        val ToHome: Button = dialog.findViewById(R.id.toHome)
-        val Share: Button = dialog.findViewById(R.id.btn_share)
-        val Score: TextView = dialog.findViewById(R.id.scoreResult)
-        val result: TextView = dialog.findViewById(R.id.tv_detail_result)
-        val status: TextView = dialog.findViewById(R.id.tv_status_result)
-
-        Score.text = score.toString()
-        result.text = message
-
-        if (score < 70) {
-            status.text = "Coba Lagi Nanti Yah."
-        } else {
-            status.text = "Kerja Bagus, Pertahankan."
-        }
-
-        ToHome.setOnClickListener {
-            val intent = Intent()
-//                intent.putExtra("key", 1)
-            setResult(Activity.RESULT_OK, intent)
-            finish()
-        }
-
-        Share.setOnClickListener {
-            val shareIntent = Intent(Intent.ACTION_SEND)
-            shareIntent.type = "text/plain"
-            shareIntent.putExtra(
-                Intent.EXTRA_TEXT,
-                "Saya Mendapatkan Score $score, Ayo kita Main NusaVote, Aplikasi Yang Sangat Menyenangkan!!!!!"
-            )
-
-            startActivity(Intent.createChooser(shareIntent, "Bagikan Ke"))
-        }
-
-        dialog.show()
+        val bottomSheet = BottomSheetScoreFragment(this, message, score)
+        bottomSheet.isCancelable = false
+        bottomSheet.show(supportFragmentManager, bottomSheet.tag)
     }
 }
