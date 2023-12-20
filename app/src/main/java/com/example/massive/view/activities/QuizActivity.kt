@@ -17,8 +17,8 @@ import android.widget.TextView
 import com.example.massive.R
 import com.example.massive.databinding.ActivityQuizBinding
 
-class QuizActivity : AppCompatActivity(), View.OnClickListener{
-    private lateinit var binding : ActivityQuizBinding
+class QuizActivity : AppCompatActivity(), View.OnClickListener {
+    private lateinit var binding: ActivityQuizBinding
 
     //array soal, pilihan, dan jawaban
     private val question = arrayOf(
@@ -31,7 +31,8 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
         "Lunga",
         "Lali / Kelalen",
         "Munggah",
-        "Kula")
+        "Kula"
+    )
     private val options = arrayOf(
         arrayOf("Makan", "Minum", "Main", "Mandi"),
         arrayOf("Aku", "Dia", "Kamu", "Kita"),
@@ -61,7 +62,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
         binding.ivQuizBack.setOnClickListener(this)
         binding.btnPeriksa.setOnClickListener(this)
         binding.btnLanjut.setOnClickListener(this)
-        binding.rgOptions.setOnCheckedChangeListener{ _,_ ->
+        binding.rgOptions.setOnCheckedChangeListener { _, _ ->
             binding.btnPeriksa.isEnabled =
                 binding.rbOption1.isChecked || binding.rbOption2.isChecked
                         || binding.rbOption3.isChecked || binding.rbOption4.isChecked
@@ -69,7 +70,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
 
     }
 
-    private fun showQuestion(){
+    private fun showQuestion() {
         binding.tvQuestionKata.text = question[currentQuestionIndex]
         binding.rbOption1.text = options[currentQuestionIndex][0]
         binding.rbOption2.text = options[currentQuestionIndex][1]
@@ -77,8 +78,8 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
         binding.rbOption4.text = options[currentQuestionIndex][3]
     }
 
-    private fun correctOptionColor(index : Int){
-        when(index) {
+    private fun correctOptionColor(index: Int) {
+        when (index) {
             0 -> binding.rbOption1.setBackgroundResource(R.drawable.outlined_green)
             1 -> binding.rbOption2.setBackgroundResource(R.drawable.outlined_green)
             2 -> binding.rbOption3.setBackgroundResource(R.drawable.outlined_green)
@@ -86,8 +87,8 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
         }
     }
 
-    private fun wrongOptionColor(index : Int){
-        when(index) {
+    private fun wrongOptionColor(index: Int) {
+        when (index) {
             0 -> binding.rbOption1.setBackgroundResource(R.drawable.outlined_red)
             1 -> binding.rbOption2.setBackgroundResource(R.drawable.outlined_red)
             2 -> binding.rbOption3.setBackgroundResource(R.drawable.outlined_red)
@@ -95,25 +96,26 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
         }
     }
 
-    private fun ResultColor(index : Int){
-        when(index) {
+    private fun ResultColor(index: Int) {
+        when (index) {
             0 -> binding.bgResult.setBackgroundColor(resources.getColor(R.color.primary_15))
             1 -> binding.bgResult.setBackgroundColor(resources.getColor(R.color.green))
         }
     }
 
-    private fun checkAnswer(selectedAnswer : Int){
+    private fun checkAnswer(selectedAnswer: Int) {
         val correctAnswerIndex = answer[currentQuestionIndex]
 
-        if (selectedAnswer == correctAnswerIndex){
-            score += 100/question.size
+        if (selectedAnswer == correctAnswerIndex) {
+            score += 100 / question.size
             correct++
             correctOptionColor(selectedAnswer)
             ResultColor(1)
-            binding.btnLanjut.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.green1))
+            binding.btnLanjut.backgroundTintList =
+                ColorStateList.valueOf(resources.getColor(R.color.green1))
             binding.tvBenarSalah.text = "Benar! Monggo dilanjut"
             binding.tvBenarSalah.setTextColor(resources.getColor(R.color.green1))
-        }else{
+        } else {
             wrong++
             correctOptionColor(correctAnswerIndex)
             wrongOptionColor(selectedAnswer)
@@ -125,7 +127,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
     }
 
     override fun onClick(v: View) {
-        when(v.id){
+        when (v.id) {
             R.id.btn_periksa -> {
                 //button lanjut akan visible dan sebaliknya
                 binding.btnLanjut.visibility = View.VISIBLE
@@ -144,11 +146,12 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
 
                 //cek jawaban sesuai option dipilih
                 val selectedOption = binding.rgOptions.checkedRadioButtonId
-                val selectedOptionIndex = binding.rgOptions.indexOfChild(findViewById(selectedOption))
+                val selectedOptionIndex =
+                    binding.rgOptions.indexOfChild(findViewById(selectedOption))
                 checkAnswer(selectedOptionIndex)
 
                 //cek apabila soal telah selesai
-                if (currentQuestionIndex == question.size-1){
+                if (currentQuestionIndex == question.size - 1) {
                     binding.btnLanjut.text = "Lihat Skor"
                 }
             }
@@ -166,7 +169,8 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
                 binding.rbOption2.setBackgroundResource(R.drawable.selector_outlined_red_white)
                 binding.rbOption3.setBackgroundResource(R.drawable.selector_outlined_red_white)
                 binding.rbOption4.setBackgroundResource(R.drawable.selector_outlined_red_white)
-                binding.btnLanjut.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.primary))
+                binding.btnLanjut.backgroundTintList =
+                    ColorStateList.valueOf(resources.getColor(R.color.primary))
 
                 //option enable
                 binding.rbOption1.isEnabled = true
@@ -176,38 +180,65 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
 
                 //index soal akan bertambah
                 currentQuestionIndex++
-                if (currentQuestionIndex < question.size){
+                if (currentQuestionIndex < question.size) {
                     showQuestion()
-                }else{
+                } else {
                     binding.pbQuiz.progress = 0
                     val message = "Jumlah Benar : $correct\n" +
                             "Jumlah Salah : $wrong"
                     showResultDialog(message, score)
                 }
             }
+
             R.id.iv_quiz_back -> {
-                val intent = Intent()
-//                intent.putExtra("key", 1)
-                setResult(Activity.RESULT_OK, intent)
-                finish()
+                val message: String? = "Apakah Anda yakin ingin berhenti mengerjakan?"
+                showCustomDialogQuiz(message)
             }
         }
     }
 
+    private fun showCustomDialogQuiz(message: String?) {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.dialog_custom)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val tvMessageDialog: TextView = dialog.findViewById(R.id.tv_dialog_message)
+        val btnYesDialog: Button = dialog.findViewById(R.id.btn_dialog_yes)
+        val btnNoDialog: Button = dialog.findViewById(R.id.btn_dialog_no)
+
+        tvMessageDialog.text = message
+
+        btnYesDialog.setOnClickListener {
+            val intent = Intent()
+//                intent.putExtra("key", 1)
+            setResult(Activity.RESULT_OK, intent)
+            finish()
+        }
+        btnNoDialog.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+
     private fun showResultDialog(message: String, score: Int) {
-        val dialog  = Dialog(this)
+        val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(false)
         dialog.setContentView(R.layout.dialog_result)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
         dialog.window?.setGravity(Gravity.BOTTOM)
 
-        val ToHome : Button = dialog.findViewById(R.id.toHome)
-        val Share : Button = dialog.findViewById(R.id.btn_share)
-        val Score : TextView = dialog.findViewById(R.id.scoreResult)
-        val result : TextView = dialog.findViewById(R.id.tv_detail_result)
-        val status : TextView = dialog.findViewById(R.id.tv_status_result)
+        val ToHome: Button = dialog.findViewById(R.id.toHome)
+        val Share: Button = dialog.findViewById(R.id.btn_share)
+        val Score: TextView = dialog.findViewById(R.id.scoreResult)
+        val result: TextView = dialog.findViewById(R.id.tv_detail_result)
+        val status: TextView = dialog.findViewById(R.id.tv_status_result)
 
         Score.text = score.toString()
         result.text = message
@@ -218,7 +249,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
             status.text = "Kerja Bagus, Pertahankan."
         }
 
-        ToHome.setOnClickListener{
+        ToHome.setOnClickListener {
             val intent = Intent()
 //                intent.putExtra("key", 1)
             setResult(Activity.RESULT_OK, intent)
@@ -228,7 +259,10 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener{
         Share.setOnClickListener {
             val shareIntent = Intent(Intent.ACTION_SEND)
             shareIntent.type = "text/plain"
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Saya Mendapatkan Score $score, Ayo kita Main NusaVote, Aplikasi Yang Sangat Menyenangkan!!!!!")
+            shareIntent.putExtra(
+                Intent.EXTRA_TEXT,
+                "Saya Mendapatkan Score $score, Ayo kita Main NusaVote, Aplikasi Yang Sangat Menyenangkan!!!!!"
+            )
 
             startActivity(Intent.createChooser(shareIntent, "Bagikan Ke"))
         }

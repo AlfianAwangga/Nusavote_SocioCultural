@@ -1,12 +1,19 @@
 package com.example.massive.view.activities
 
 import android.app.Activity
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
+import android.view.Window
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
@@ -33,8 +40,6 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnPilihFile.setOnClickListener(this)
         binding.ivBackProfile.setOnClickListener(this)
 
-
-
         init()
         dataUserEditText()
         logout()
@@ -48,6 +53,7 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
             intent.putExtra("key", 1)
             setResult(Activity.RESULT_OK, intent)
             finish()
+            Toast.makeText(this, "Data Telah Tersimpan!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -61,6 +67,25 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun logout() {
         binding.btnLogout.setOnClickListener {
+            val message: String? = "Apakah Anda yakin ingin Keluar?"
+            showCustomDialog(message)
+        }
+    }
+
+    private fun showCustomDialog(message: String?) {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.dialog_custom)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val tvMessageDialog: TextView = dialog.findViewById(R.id.tv_dialog_message)
+        val btnYesDialog: Button = dialog.findViewById(R.id.btn_dialog_yes)
+        val btnNoDialog: Button = dialog.findViewById(R.id.btn_dialog_no)
+
+        tvMessageDialog.text = message
+
+        btnYesDialog.setOnClickListener {
             pref.saveLogin(0).let {
                 google.signOutGoogle()
                 fb.logoutFacebook()
@@ -68,6 +93,12 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
         }
+        btnNoDialog.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
+
     }
 
     private fun init() {
